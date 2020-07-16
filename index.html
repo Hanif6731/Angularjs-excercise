@@ -3,19 +3,16 @@
     <meta charset="UTF-8">
 <script src="angular.min.js" type="application/javascript" ></script>
 <script src="app.js" type="application/javascript"></script>
-    <title>Name Calculator</title>
+    <title>Dipendency Injection in JavaScript (and AngularJs)</title>
 </head>
-<body ng-app="NameCalculatorApp">
+<body ng-app="DIApp">
 <h1>Name Calculator</h1>
-    <div ng-controller="NameCalculatorController">
+    <div ng-controller="DIController">
         <div>
             Your Name:
             <input type="text"
                    ng-model="name"
-                   ng-keyup="displayNumeric();"/>
-        </div>
-        <div>
-            Total numeric length of your name is: {{totalLen}}
+                   ng-blur="upper();"/>
         </div>
 
     </div>

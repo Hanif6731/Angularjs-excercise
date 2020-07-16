@@ -1,20 +1,18 @@
 (function () {
 'use strict';
-angular.module('NameCalculatorApp',[])
-    .controller('NameCalculatorController',function ($scope) {
-        $scope.name="";
-        $scope.totalLen=0;
-        $scope.displayNumeric=function () {
-            let totalNameValue=calculateNameLen($scope.name);
-            $scope.totalLen=totalNameValue;
+angular.module('DIApp',[])
+    .controller('DIController', DIController);
 
-        };
-        function calculateNameLen(str) {
-            var tsValue=0;
-            for(var k=0; k<str.length; k++){
-                tsValue += str.charCodeAt(k);
-            }
-            return tsValue;
-        };
-    });
+function DIController($scope,
+                      $filter,
+                      $injector) {
+    $scope.name="Hanif";
+
+    $scope.upper=function () {
+        var upCase=$filter('uppercase');
+        $scope.name=upCase($scope.name);
+    };
+
+    console.log($injector.annotate(DIController))
+}
 })();
