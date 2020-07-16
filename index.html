@@ -3,18 +3,18 @@
     <meta charset="UTF-8">
 <script src="angular.min.js" type="application/javascript" ></script>
 <script src="app.js" type="application/javascript"></script>
-    <title>Dipendency Injection in JavaScript (and AngularJs)</title>
+    <title>Expression and Interpolation</title>
 </head>
-<body ng-app="DIApp">
-<h1>Name Calculator</h1>
-    <div ng-controller="DIController">
+<body ng-app="MsgApp">
+<h1>Expression and Interpolation</h1>
+    <div ng-controller="MsgController">
+        Messege from {{name}}:<br/>
+        {{sayMessege()}}
         <div>
-            Your Name:
-            <input type="text"
-                   ng-model="name"
-                   ng-blur="upper();"/>
+            <button ng-click="givePrize()">Give prize</button>
+            <br/>
+            <img src="images/Hanif{{stateOfBeing}}.png"/>
         </div>
-
     </div>
 </body>
 </html>
